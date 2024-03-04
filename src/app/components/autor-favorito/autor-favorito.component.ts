@@ -37,4 +37,5 @@ export class AutorFavoritoComponent {
       localStorage.setItem('autoresFavoritos', JSON.stringify(autoresFavoritos));
     }
   }
+  
 }
