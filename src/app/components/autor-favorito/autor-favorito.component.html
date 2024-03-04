@@ -4,12 +4,16 @@
   <thead>
     <tr>
       <th>Autores favoritas</th>
+      <th>Accion</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of data">
       <td>
         <a [routerLink]="">{{ item.author }}</a>
+      </td>
+      <td>
+        <button (click)="eliminarAutorFavorito(item.author)">Eliminar</button>
       </td>
     </tr>
   </tbody>

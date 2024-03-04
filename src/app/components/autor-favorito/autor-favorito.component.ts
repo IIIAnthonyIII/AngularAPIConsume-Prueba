@@ -29,4 +29,12 @@ export class AutorFavoritoComponent {
     const obrasFavoritasLocal = localStorage.getItem('obrasFavoritas');
     return obrasFavoritasLocal ? JSON.parse(obrasFavoritasLocal) : [];
   }
+  eliminarAutorFavorito(author: any): void {
+    const autoresFavoritos = this.getAutoresFavoritas();
+    const index = autoresFavoritos.findIndex((favorite: { author: any }) => favorite.author === author); 
+    if (index !== -1) {
+      autoresFavoritos.splice(index, 1);
+      localStorage.setItem('autoresFavoritos', JSON.stringify(autoresFavoritos));
+    }
+  }
 }
