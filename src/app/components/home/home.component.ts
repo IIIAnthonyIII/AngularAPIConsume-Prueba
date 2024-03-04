@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthorServiceService } from '../../service/author-service.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { AuthorServiceService } from '../../service/author-service/author-service.service';
 
 @Component({
   selector: 'app-home',

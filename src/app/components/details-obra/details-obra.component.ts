@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AuthorServiceService } from '../../service/author-service.service';
 import { CommonModule } from '@angular/common';
+import { AuthorServiceService } from '../../service/author-service/author-service.service';
 
 @Component({
   selector: 'app-details-obra',
