@@ -1,0 +1,12 @@
+<table>
+    <thead>
+      <tr>
+        <th>Autores</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td><a [routerLink]="['/obras', item]">{{ item }}</a></td>
+      </tr>
+    </tbody>
+  </table>
