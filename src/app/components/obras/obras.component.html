@@ -1,13 +1,18 @@
 <table>
-    <thead>
-      <tr>
-        <th>Obras de {{author}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of data">
-        <td><a [routerLink]="['/obras', author, item.title]">{{ item.title }}</a></td>
+  <thead>
+    <tr>
+      <th>Obras de {{ author }}</th>
+      <th *ngIf="isLoggedIn()">Favorito</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>
+        <a [routerLink]="['/obras', author, item.title]">{{ item.title }}</a>
+      </td>
+      <td *ngIf="isLoggedIn()">
         <button (click)="marcarObraFavorita(item.title)">Favorito</button>
-      </tr>
-    </tbody>
-  </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

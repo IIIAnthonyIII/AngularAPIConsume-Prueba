@@ -2,12 +2,13 @@
     <thead>
       <tr>
         <th>Autores</th>
+        <th *ngIf="isLoggedIn()">Favorito</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of data">
         <td><a [routerLink]="['/obras', item]">{{ item }}</a></td>
-        <button (click)="marcarAutorFavorito(item)">Favorito</button>
+        <td *ngIf="isLoggedIn()"><button (click)="marcarAutorFavorito(item)">Favorito</button></td>
       </tr>
     </tbody>
   </table>

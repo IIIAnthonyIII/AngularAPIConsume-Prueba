@@ -21,13 +21,22 @@ export class HomeComponent {
       this.data = data.authors;
     })
   }
+  private getAutoresFavoritos(): any[] {
+    const autoresFavoritasLocal = localStorage.getItem('autoresFavoritos');
+    return autoresFavoritasLocal ? JSON.parse(autoresFavoritasLocal) : [];
+  }
+  autorFavorito(obra: any): boolean {
+    const obrasFavoritas = this.getAutoresFavoritos();
+    return obrasFavoritas.find(favorite => favorite.obra === obra);
+  }
   marcarAutorFavorito(author: any): void {
-    const autoresFavoritosLocal = localStorage.getItem('autoresFavoritos');
-    const autoresFavoritos = autoresFavoritosLocal ? JSON.parse(autoresFavoritosLocal) : [];
-    const autorExistente = autoresFavoritos.find((favorite: { author: any }) => favorite.author === author);
-    if (!autorExistente) {
+    if (!this.autorFavorito(author)) {
+      const autoresFavoritos = this.getAutoresFavoritos();
       autoresFavoritos.push({ author: author });
       localStorage.setItem('autoresFavoritos', JSON.stringify(autoresFavoritos));
     }
+  }
+  isLoggedIn(): boolean {
+    return localStorage.getItem('currentUser') !== null;
   }
 }
