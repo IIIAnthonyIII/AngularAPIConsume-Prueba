@@ -21,7 +21,4 @@ export class HomeComponent {
       this.data = data.authors;
     })
   }
-  mostrarMensaje(): void {
-    alert('Aún en proceso...');
-  }
 }

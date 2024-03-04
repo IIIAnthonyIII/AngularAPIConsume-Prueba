@@ -15,4 +15,7 @@ export class AuthorServiceService {
   public getDataAutorObras(author: any): Observable<any>{
     return this.http.get<any>(this.uriApi+"author/"+author+"/title");
   }
+  public getDataDetailsObra(author: any, title: any): Observable<any>{
+    return this.http.get<any>(this.uriApi+"author,title/"+author+";"+title);
+  }
 }

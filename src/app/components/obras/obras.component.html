@@ -6,7 +6,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of data">
-        <td><a [routerLink]="['/obras', item.title]">{{ item.title }}</a></td>
+        <td><a [routerLink]="['/obras', author, item.title]">{{ item.title }}</a></td>
       </tr>
     </tbody>
   </table>

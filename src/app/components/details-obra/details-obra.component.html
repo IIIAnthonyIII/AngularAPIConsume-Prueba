@@ -1,0 +1,19 @@
+<h3>Detalle de la obra</h3>
+<table>
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Texto</th>
+        <th>Lineas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.title }}</td>
+        <td>{{ item.author }}</td>
+        <td>{{ item.lines }}</td>
+        <td>{{ item.linecount }}</td>
+      </tr>
+    </tbody>
+  </table>
