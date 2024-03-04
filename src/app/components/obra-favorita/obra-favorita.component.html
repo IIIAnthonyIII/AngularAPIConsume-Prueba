@@ -1,1 +1,15 @@
-<p>obra-favorita works!</p>
+<h3>Obras totales: {{ obrasCount }}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Obras favoritas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>
+        <a [routerLink]="">{{ item.obra }}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

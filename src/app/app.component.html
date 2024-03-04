@@ -1,3 +1,6 @@
+<a [routerLink]="['/']" class="logout-link">Home</a>
 <a *ngIf="!isLoggedIn()" [routerLink]="['/login']" class="login-link">Login</a>
 <a *ngIf="isLoggedIn()" (click)="logout()" class="logout-link">Logout</a>
+<a *ngIf="isLoggedIn()" [routerLink]="['/autorfavorito']" class="logout-link">Autores Favoritos</a>
+<a *ngIf="isLoggedIn()" [routerLink]="['/obrafavorita']" class="logout-link">Obras Favoritas</a>
 <router-outlet></router-outlet>

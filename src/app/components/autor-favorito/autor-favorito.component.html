@@ -1,1 +1,16 @@
-<p>autor-favorito works!</p>
+<h3>Favoritos totales: {{totalCount}}</h3>
+<h3>Autores totales: {{ autorCount }}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Autores favoritas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>
+        <a [routerLink]="">{{ item.author }}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
