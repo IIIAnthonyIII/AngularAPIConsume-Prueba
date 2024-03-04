@@ -21,6 +21,7 @@ export class LoginComponent {
     const user = users.find(u => u.username === this.username && u.password === this.password);
     if (user) {
       console.log('Inicio de sesión exitoso para el usuario:', user.username);
+      localStorage.setItem('currentUser', user.username);
       this.router.navigate(['/']);
     } else {
       this.errorMessage = 'Credenciales incorrectas. Por favor, inténtalo de nuevo.';

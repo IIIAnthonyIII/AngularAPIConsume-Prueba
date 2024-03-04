@@ -21,4 +21,13 @@ export class HomeComponent {
       this.data = data.authors;
     })
   }
+  marcarAutorFavorito(author: any): void {
+    const autoresFavoritosLocal = localStorage.getItem('autoresFavoritos');
+    const autoresFavoritos = autoresFavoritosLocal ? JSON.parse(autoresFavoritosLocal) : [];
+    const autorExistente = autoresFavoritos.find((favorite: { author: any }) => favorite.author === author);
+    if (!autorExistente) {
+      autoresFavoritos.push({ author: author });
+      localStorage.setItem('autoresFavoritos', JSON.stringify(autoresFavoritos));
+    }
+  }
 }

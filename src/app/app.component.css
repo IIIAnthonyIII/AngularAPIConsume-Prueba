@@ -1,0 +1,16 @@
+.login-link,
+.logout-link {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-link:hover,
+.logout-link:hover {
+  background-color: #eee;
+}

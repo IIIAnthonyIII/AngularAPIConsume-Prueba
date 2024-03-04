@@ -24,4 +24,13 @@ export class ObrasComponent {
       this.data = data;
     })
   }
+  marcarObraFavorita(obra: any): void {
+    const obrasFavoritasLocal = localStorage.getItem('obrasFavoritas');
+    const obrasFavoritas = obrasFavoritasLocal ? JSON.parse(obrasFavoritasLocal) : [];
+    const obrasExistente = obrasFavoritas.find((favorite: { obra: any }) => favorite.obra === obra);
+    if (!obrasExistente) {
+      obrasFavoritas.push({ obra: obra });
+      localStorage.setItem('obrasFavoritas', JSON.stringify(obrasFavoritas));
+    }
+  }
 }

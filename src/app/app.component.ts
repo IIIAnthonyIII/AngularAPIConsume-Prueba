@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -13,4 +13,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'Author';
+  constructor(private router: Router) {}
+  isLoggedIn(): boolean {
+    return localStorage.getItem('currentUser') !== null;
+  }
+  logout(): void {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/login']);
+  }
 }
